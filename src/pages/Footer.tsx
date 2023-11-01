@@ -16,7 +16,7 @@ function Footer() {
         </div>
         <div className='w-2/5 h-full flex items-center  gap-2'>
             <span className='text-[#60E8FF]  p-2 rounded-lg hover:bg-white hover:bg-opacity-10'><SiWindows11 size={24}  /></span>
-            <span className='text-white flex gap-1 text-sm items-center w-32 p-2 rounded-3xl bg-white bg-opacity-10 hover:bg-opacity-20'><AiOutlineSearch size={24}  />Ara</span>
+            <span className='text-white flex gap-1 text-sm items-center justify-center w-32 p-2 rounded-3xl bg-white bg-opacity-10 hover:bg-opacity-20 '><AiOutlineSearch size={24}  />Ara</span>
             <span className='text-gray-300  p-2 rounded-lg hover:bg-white hover:bg-opacity-10'><RiCheckboxMultipleBlankFill size={28}  /></span>
             <span className='text-[#FFCE45]  p-2 rounded-lg hover:bg-white hover:bg-opacity-10'><BsFolderFill size={28}  /></span>
             <span className='text-red-500  p-2 rounded-lg hover:bg-white hover:bg-opacity-10'><SiOperagx size={28}  /></span>
