@@ -8,6 +8,7 @@ export default {
     extend: {
       backgroundImage: {
         'dark': "url('./src/assets/win-bg.jpg')",
+        'git': "url('./src/assets/git4.png')",
       },
     },
   },
