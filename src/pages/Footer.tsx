@@ -4,29 +4,81 @@ import { RiCheckboxMultipleBlankFill } from "react-icons/ri";
 import { BsFolderFill, BsKeyboard, BsFillBellFill } from "react-icons/bs";
 import { IoIosArrowUp } from "react-icons/io";
 import { IoWifi, IoBatteryChargingOutline } from "react-icons/io5";
+import { BsSunFill } from "react-icons/bs";
 import { HiOutlineSpeakerWave } from "react-icons/hi2";
 import Clock from "../components/clock/Clock";
 import CurrentDate from "../components/clock/CurrentDate";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/app/store";
-import { setLoading } from "../redux/app/slices/startSlice"; 
+import { setLoading } from "../redux/app/slices/startSlice";
 import { setOpera } from "../redux/app/slices/operaSlice";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 function Footer() {
+  interface WeatherData {
+    name: string;
+    main: {
+      temp: number;
+    };
+    weather: {
+      description: string;
+    }[];
+  }
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
+  const [isClearSky, setClearSky] = useState<boolean>(false);
+
   const isLoading = useSelector((state: RootState) => state.start.isLoading);
   const opera = useSelector((state: RootState) => state.opera.value);
   const dispatch = useDispatch();
-  console.log(opera,"opera")
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.openweathermap.org/data/2.5/weather?q=istanbul&appid=7eb03d9aec03a5394cf93569c3d06280`
+        );
+        const data: WeatherData = response.data;
+        setWeatherData(data);
+
+        // Veriyi aldıktan sonra hava durumunu kontrol edebilirsiniz
+        if (data.weather[0].description === "Clear sky") {
+          setClearSky(true);
+        }
+      } catch (error) {
+        console.error("Hata:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleButtonClick = () => {
-    dispatch(setLoading(!isLoading)); 
+    dispatch(setLoading(!isLoading));
   };
   const handleOpera = () => {
-    dispatch(setOpera(!opera)); 
+    dispatch(setOpera(!opera));
   };
+  if (!weatherData) {
+    return <p>Yükleniyor...</p>;
+  }
+
+  console.log(isClearSky);
+
   return (
     <div className="absolute flex h-14 bottom-0 left-0 w-full text-white bg-black bg-opacity-50 ">
-      <div className="w-2/5"></div>
+      <div className="w-2/5 grid grid-cols-1">
+        <div className="flex pl-2">
+          <BsSunFill className="text-yellow-400 pr-1 mx-1 h-full" size={24} />
+          <div className="text-sm h-full py-2">
+            <div>{(weatherData.main.temp - 273.15).toFixed(0)} °C</div>
+            <div className=" text-sm capitalize"> {" "}
+              {weatherData.weather[0].description}
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="w-2/5 h-full flex items-center  gap-2">
         <span
           onClick={handleButtonClick}
@@ -44,7 +96,10 @@ function Footer() {
         <span className="text-[#FFCE45]  p-2 rounded-lg hover:bg-white hover:bg-opacity-10">
           <BsFolderFill size={28} />
         </span>
-        <span onClick={handleOpera} className="text-red-500  p-2 rounded-lg hover:bg-white hover:bg-opacity-10">
+        <span
+          onClick={handleOpera}
+          className="text-red-500  p-2 rounded-lg hover:bg-white hover:bg-opacity-10"
+        >
           <SiOperagx size={28} />
         </span>
       </div>
