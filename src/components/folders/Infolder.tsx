@@ -1,12 +1,14 @@
 import Aside from "./Infolder/Aside"
+import Content from "./Infolder/Content"
 import Controlbar from "./Infolder/Controlbar"
+import Footer from "./Infolder/Footer"
 import Header from "./Infolder/Header"
 import Navbar from "./Infolder/Navbar"
 
 
 function Infolder() {
   return (
-    <div className="w-full h-full  px-[350px] p-44">
+    <div className="w-full h-full  px-[350px]  p-14">
         <div className=" rounded-lg h-full">
             <div className="bg-[#202020] flex justify-between  h-11 rounded-t-lg">
                 <Navbar />
@@ -22,11 +24,11 @@ function Infolder() {
                    <Aside />
                 </div>
                 <div className=" w-full">
-                    content
+                <Content />
                 </div>
             </div>
-            <div className="border w-full rounded-b-lg bg-[#1c1c1c]">
-                footer
+            <div className=" w-full rounded-b-lg bg-[#1c1c1c] h-7">
+                <Footer />
             </div>
         </div>
     </div>

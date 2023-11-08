@@ -9,3 +9,25 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #1b1b1b #000000;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #c54c4c00;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(100, 90, 100);
+    
+    border: 1px ;
+  }

@@ -9,15 +9,13 @@ function Opera() {
   const opera = useSelector((state: RootState) => state.opera.value);
 
   return (
-    <div
-      className={`${opera ? "" : "hidden"} h-full w-full bg-[#121212] pb-10`}
-    >
+    <div  className={`${opera ? "" : "hidden"} h-full w-full bg-[#121212] pb-10 relative`}>
       <div className="">
         <Navbar />
       </div>
       <div className="flex h-full">
         <Aside />
-        <span className="w-full h-full pb-10 border-s border-t border-gray-400">
+        <span className="w-full h-full pb-10 border-s border-t border-gray-400 relative">
           <Url />
           <Content />
         </span>

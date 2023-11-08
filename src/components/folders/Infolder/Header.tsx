@@ -13,10 +13,10 @@ function Header() {
             <span className='text-gray-400 p-2 rounded-md '>
                 <AiOutlineArrowRight />
             </span>
-            <span className='text-gray-100 p-2 hover:bg-[#383838] rounded-md z-40'>
+            <span className='text-gray-100 p-2 hover:bg-[#383838] rounded-md z-10'>
                 <AiOutlineArrowUp />
             </span>
-            <span className='text-gray-100 p-2 hover:bg-[#383838] rounded-md z-40'>
+            <span className='text-gray-100 p-2 hover:bg-[#383838] rounded-md z-10'>
             <BsArrowClockwise />
             </span>
         </div>
@@ -24,16 +24,16 @@ function Header() {
             <span className='ml-1'>
                 <SlScreenDesktop size={16} />
             </span>
-            <span className=' hover:bg-[#444444] z-20  p-2 rounded-md'>
+            <span className=' hover:bg-[#444444] z-10  p-2 rounded-md'>
                 <IoIosArrowForward size={12} />
             </span>
-            <span className='hover:bg-[#444444] z-20  p-2 rounded-md text-sm -ml-2'>
+            <span className='hover:bg-[#444444] z-10  p-2 rounded-md text-sm -ml-2'>
                 Portfolio
             </span>
         </div>
         <div className=' flex justify-between items-center rounded bg-[#3d3d3d] m-1 p-2 w-[24%]'>
             <span className='text-sm text-gray-300'>
-               <input className='outline-none relative bg-transparent placeholder:text-gray-300 z-30 ' type="text" placeholder='Portfolio klasöründe ara' />
+               <input className='outline-none relative bg-transparent placeholder:text-gray-300 z-10 ' type="text" placeholder='Portfolio klasöründe ara' />
             </span>
             <span>
                 <AiOutlineSearch size={14} />
