@@ -36,7 +36,7 @@ function Controlbar() {
           </span>
         </div>
         <div className="border h-6 border-gray-800"></div>
-        <div className="flex">
+        <div className="hidden xl:flex ">
           <div className="flex gap-2 hover:bg-[#272727] relative z-10 rounded cursor-default h-8 px-1">
             <span className="flex w-5 relative h-6 p-1">
               <BsArrowUp className="absolute left-0 mt-1" size={12} />
@@ -50,11 +50,11 @@ function Controlbar() {
             </span>
             
           </div>
-          <div className="flex">
+          <div className=" hidden 2xl:flex ">
             <span className="flex items-center gap-2 text-xs ml-5 hover:bg-[#272727] relative z-10 cursor-default rounded px-1">
                 <HiOutlineBars4 size={18} /> Görüntüle <MdKeyboardArrowDown size={14} />
             </span>
-            <div className="border h- border-gray-800 ml-2"></div>
+            <div className="border border-gray-800 ml-2"></div>
             <span className="flex items-center mx-2 hover:bg-[#272727] relative z-10 cursor-default rounded px-2">
                 <BsThreeDots size={20} />
             </span>

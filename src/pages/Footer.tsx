@@ -11,7 +11,7 @@ import CurrentDate from "../components/clock/CurrentDate";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/app/store";
 import { setLoading } from "../redux/app/slices/startSlice";
-import { setOpera } from "../redux/app/slices/operaSlice";
+import { setFolder, setOpera } from "../redux/app/slices/operaSlice";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -31,6 +31,7 @@ function Footer() {
   const isLoading = useSelector((state: RootState) => state.start.isLoading);
   const opera = useSelector((state: RootState) => state.opera.value);
   const dispatch = useDispatch();
+  const folder = useSelector((state: RootState) => state.opera.value2);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -59,12 +60,14 @@ function Footer() {
   const handleOpera = () => {
     dispatch(setOpera(!opera));
   };
+  const handleFolder = () => {
+    dispatch(setFolder(!folder));
+  };
   if (!weatherData) {
     return <p>Yükleniyor...</p>;
   }
 
-  console.log(isClearSky);
-
+  
   return (
     <div className="absolute flex h-14 bottom-0 left-0 w-full text-white bg-black bg-opacity-50 ">
       <div className="w-2/5 grid grid-cols-1">
@@ -93,7 +96,7 @@ function Footer() {
         <span className="text-gray-300  p-2 rounded-lg hover:bg-white hover:bg-opacity-10">
           <RiCheckboxMultipleBlankFill size={28} />
         </span>
-        <span className="text-[#FFCE45]  p-2 rounded-lg hover:bg-white hover:bg-opacity-10">
+        <span onClick={handleFolder} className="text-[#FFCE45]  p-2 rounded-lg hover:bg-white hover:bg-opacity-10">
           <BsFolderFill size={28} />
         </span>
         <span

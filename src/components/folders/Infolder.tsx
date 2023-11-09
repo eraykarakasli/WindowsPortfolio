@@ -5,16 +5,20 @@ import Footer from "./Infolder/Footer"
 import Header from "./Infolder/Header"
 import Navbar from "./Infolder/Navbar"
 
+interface InfolderProps {
+    name: string;
+    image: string;
+  }
 
-function Infolder() {
+const Infolder: React.FC<InfolderProps> = ({ name, image }) => {
   return (
     <div className="w-full h-full  px-[350px]  p-14">
         <div className=" rounded-lg h-full">
             <div className="bg-[#202020] flex justify-between  h-11 rounded-t-lg">
-                <Navbar />
+                <Navbar name={name} image={image} />
             </div>
             <div className="bg-[#2c2c2c] h-11 border-t border-gray-900">
-                <Header />
+                <Header name={name} />
             </div>
             <div className="bg-[#191919] h-14 border-t border-gray-700">
                 <Controlbar />
