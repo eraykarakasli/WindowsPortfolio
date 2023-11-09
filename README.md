@@ -4,10 +4,10 @@ This project has been created to windowsPortfolio site and also serve as a templ
 
 ## Preview
 
-![Home]()
-![Start]()
-![Folder]()
-![Opera]()
+![Home](https://github.com/eraykarakasli/WindowsPortfolio/blob/main/src/assets/Screenshot_1.png?raw=true)
+![Start](https://github.com/eraykarakasli/WindowsPortfolio/blob/main/src/assets/Screenshot_2.png?raw=true)
+![Folder](https://github.com/eraykarakasli/WindowsPortfolio/blob/main/src/assets/Screenshot_3.png?raw=true)
+![Opera](https://github.com/eraykarakasli/WindowsPortfolio/blob/main/src/assets/Screenshot_4.png?raw=true)
 
 
 ## Technologies and Libraries
