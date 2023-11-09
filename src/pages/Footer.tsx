@@ -26,7 +26,7 @@ function Footer() {
     }[];
   }
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
-  const [isClearSky, setClearSky] = useState<boolean>(false);
+  
 
   const isLoading = useSelector((state: RootState) => state.start.isLoading);
   const opera = useSelector((state: RootState) => state.opera.value);
@@ -42,10 +42,7 @@ function Footer() {
         const data: WeatherData = response.data;
         setWeatherData(data);
 
-        // Veriyi aldıktan sonra hava durumunu kontrol edebilirsiniz
-        if (data.weather[0].description === "Clear sky") {
-          setClearSky(true);
-        }
+      
       } catch (error) {
         console.error("Hata:", error);
       }
